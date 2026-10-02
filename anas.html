@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Engineer Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>School Dashboard</h1>
+        <h2>تسجيل حضور وانصراف المهندسين</h2>
+
+        <!-- مدخلات المهندس -->
+        <label for="engineerName">اسم المهندس (Engineer Name):</label>
+        <input type="text" id="engineerName" placeholder="أدخل اسم المهندس">
+
+        <label for="department">القسم (Department):</label>
+        <input type="text" id="department" placeholder="مثال: مدني / عمارة / ميكانيكا">
+
+        <!-- أزرار الحركة -->
+        <div class="buttons-group">
+            <button id="loginBtn" onclick="registerMovement('حضور (Check In)')">تسجيل دخول</button>
+            <button id="logoutBtn" onclick="registerMovement('انصراف (Check Out)')">تسجيل خروج</button>
+        </div>
+
+        <hr>
+
+        <!-- منطقة استعراض الجدول بالباسورد -->
+        <h2>عرض جدول الحضور (خاص بالمسؤول)</h2>
+        <label for="adminPass">كلمة المرور:</label>
+        <input type="password" id="adminPass" placeholder="أدخل كلمة المرور">
+        <button id="viewBtn" onclick="unlockTable()">عرض الجدول في الصفحة</button>
+
+        <!-- الجدول المخفي الذي سيظهر فقط بعد الباسورد -->
+        <div id="tableSection" class="hidden">
+            <h3>سجل حركة المهندسين</h3>
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>اسم المهندس</th>
+                        <th>القسم</th>
+                        <th>نوع الحركة</th>
+                        <th>الوقت</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- البيانات ستنزل هنا تلقائياً -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
